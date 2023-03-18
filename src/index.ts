@@ -15,7 +15,7 @@ app.set("views", path.join(__dirname, "../src/views"));
 
 app.use(express.urlencoded({ extended: false }));
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(3000, () => console.log(`Server started on port: ${PORT}`));
 

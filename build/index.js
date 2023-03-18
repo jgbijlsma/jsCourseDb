@@ -22,7 +22,7 @@ const app = (0, express_1.default)();
 app.set("view engine", "ejs");
 app.set("views", path_1.default.join(__dirname, "../src/views"));
 app.use(express_1.default.urlencoded({ extended: false }));
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(3000, () => console.log(`Server started on port: ${PORT}`));
 app.get("/", (req, res) => {
     res.send("Hello world");
