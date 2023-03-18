@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Create new post</h1>
+
+    <form action="/posts" method="POST">
+      <input type="text" placeholder="title" name="title" />
+      <textarea placeholder="post content" name="content"></textarea>
+      <button type="submit">Save new post</button>
+    </form>
+
+    <h1>All posts</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Content</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% posts.forEach(post => { %>
+        <tr>
+          <td><%= post.id%></td>
+          <td><%= post.title%></td>
+          <td><%= post.content%></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <h1>Add comment</h1>
+
+    <form action="/comments" method="POST">
+      <input type="number" placeholder="Post id" name="postId" />
+      <textarea placeholder="Comment content" name="content"></textarea>
+      <button type="submit">Save comment</button>
+    </form>
+  </body>
+</html>

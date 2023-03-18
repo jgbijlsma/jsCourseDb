@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments</title>
+  </head>
+  <body>
+    <h1>View comments for post</h1>
+    <form action="/comments" method="GET">
+      <input type="number" placeholder="Post id" name="postId" />
+      <button type="submit">Get comments</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Content</th>
+          <th>PostId</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% comments.forEach(comment => { %>
+        <tr>
+          <td><%= comment.id %></td>
+          <td><%= comment.content %></td>
+          <td><%= comment.postId %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>
